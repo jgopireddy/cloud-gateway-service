@@ -14,6 +14,7 @@ public class SpringCloudConfig {
 				.route(r -> r.path("/customer/**")
 						.uri("http://localhost:8081/")
 						.id("customer"))
+				
 				.route(r -> r.path("/transaction-service/**")
 						.uri("http://localhost:8082/")
 						.id("transaction-service"))

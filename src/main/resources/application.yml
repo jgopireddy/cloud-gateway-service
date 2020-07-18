@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+#spring:
+#  cloud:
+#    gateway:
+#      routes:
+#      - id: customer
+#        uri: http://localhost:8081/
+#        predicates:
+#        - Path=/customer/**
+#        
+#      - id: transaction-service
+#        uri: http://localhost:8082/
+#        predicates:
+#        - Path=/transaction-service/**

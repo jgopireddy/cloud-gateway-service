@@ -1,16 +1,27 @@
 server:
   port: 8080
 
-#spring:
-#  cloud:
-#    gateway:
-#      routes:
-#      - id: customer
-#        uri: http://localhost:8081/
-#        predicates:
-#        - Path=/customer/**
-#        
-#      - id: transaction-service
-#        uri: http://localhost:8082/
-#        predicates:
-#        - Path=/transaction-service/**
+spring:
+  cloud:
+    gateway:
+#      default-filters:
+#      - CustomFilter
+      
+      routes:
+      - id: customer
+        uri: http://localhost:8081/
+        predicates:
+        - Path=/customer/**
+        filters:
+#        - AddRequestHeader=customer-request, customer-request-header
+#        - AddResponseHeader=customer-response, customer-response-header
+#         - CustomFilter
+        
+      - id: transaction-service
+        uri: http://localhost:8082/
+        predicates:
+        - Path=/transaction-service/**
+        filters:
+#        - AddRequestHeader=txnservice-request, txnservice-request-header
+#        - AddResponseHeader=txnservice-response, txnservice-response-header
+#         - CustomFilter

@@ -8,17 +8,25 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class SpringCloudConfig {
 
-	@Bean
+	/*@Bean
 	public RouteLocator gatewayRoutes(RouteLocatorBuilder builder) {
 		return builder.routes()
 				.route(r -> r.path("/customer/**")
+						.filters(
+								f -> f.addRequestHeader("customer-req-header", "customer-request")
+									.addResponseHeader("customer-resp-header", "customer-response")
+								)
 						.uri("http://localhost:8081/")
 						.id("customer"))
 				
 				.route(r -> r.path("/transaction-service/**")
+						.filters(
+								f -> f.addRequestHeader("txnservice-req-header", "txnservice-request")
+									.addResponseHeader("txnservice-resp-header", "txnservice-response")
+								)
 						.uri("http://localhost:8082/")
 						.id("transaction-service"))
 				
 				.build();
-	}
+	}*/
 }
